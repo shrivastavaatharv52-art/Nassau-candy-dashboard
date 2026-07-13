@@ -353,9 +353,8 @@ with tab1:
     fig_lb.add_vline(x=overall_margin, line_dash="dash",
                      line_color="#f7971e", annotation_text=f"Avg {overall_margin:.1f}%",
                      annotation_font_color="#f7971e")
-    fig_lb.update_layout(**base_layout("Gross Margin % by Product"),
-                          height=480,
-                          yaxis=dict(autorange='reversed', gridcolor=GRID_CLR))
+    fig_lb.update_layout(**base_layout("Gross Margin % by Product"), height=480,)
+    fig_lb.update_yaxes(autorange="reversed", gridcolor=GRID_CLR) 
     st.plotly_chart(fig_lb, use_container_width=True)
 
     # ── Profit & Revenue Contribution ────────
